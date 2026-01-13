@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio - Scribble</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="navBar">
+            <ul class="lista">
+                <li><a href="#início" class="menu"> <strong>INÍCIO</strong></a></li>
+                <li><a href="#sobre" class="menu"> <strong>SOBRE</strong> </a></li>
+                <li><a href="#projetos" class="menu"><strong>PROJETOS</strong> </a></li>
+                <li><a href="#contato" class="menu"><strong>CONTATO</strong></a></li>
+            </ul>
+        </div>
+
+        <section id="início" class="inicio">
+            <div class="imgPerfil">
+                <img src="imgPerfil.jpg" alt="Foto de perfil" class="imgPerfil">
+            </div>
+
+            <div class="nome">
+                <h1>Victor Gabriel</h1>
+                <h3>--\\==Scribble==//--</h3>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section id="sobre" class="sobre">
+            <div class="sobreBox">
+                <div class="sobreTitulo">
+                    <h2>Sobre mim:</h2>
+                </div>
+
+                <div class="sobreTxt">
+                    <p>Desenvolvedor Fullstack Jr. com preferência por Back-end. <br>
+                        Ingressei na programação em agosto de 2025 com python,<br>
+                        No desenvolvimento web, comecei em setembro do mesmo ano.</p>
+                </div>
+
+                <div class="habilidades">
+                    <h3>Habilidades</h3>
+                    <h4>Back-end</h4>
+                    <ul>
+                        <li class="skill"><img src="python.webp" alt="pythonLogo" class="logo">Python 3</li>
+                        <li class="skill"><img src="JavaScript-logo.png" alt="jsLogo" class="logo">JavaScript ES6</li>
+                        <li class="skill"><img src="node.png" alt="nodeLogo" class="logo">NodeJS</li>
+                    </ul>
+
+                    <h4>Front-end</h4>
+                    <ul>
+                        <li class="skill"><img src="html.png" alt="htmlLogo" class="logo">HTML 5</li>
+                        <li class="skill"><img src="css.png" alt="cssLogo" class="logo">CSS 3</li>
+                    </ul>
+
+                    <h4>DataBases</h4>
+                    <ul>
+                        <li class="skill"><img src="sqlite-logo.png" alt="sqliteLogo" class="logo">SQLite</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <div class="projetos">
+                <h2 class="projetosTitulo">Meus projetos:</h2>
+                <div class="projetoCard">
+                    <img id="pizzaDelivery" src="PizzaDelivery.png" alt="pizzaDelivery" class="site">
+                    <label for="pizzaDelivery"><strong>Pizza-Delivery</strong></label>
+                    <p class="projetoTxt">Sistema de delivery de pizzas simples. <br>
+                        Ferramentas: <br>
+                        Front-end: HTML, CSS, JS; <br>
+                        Back-end: JS, Python; <br>
+                        APIs: Fetch API (Flask); <br>
+                        DataBase: Não possui.
+                    </p>
+                </div>
+                <div class="projetoCard">
+                    <img id="EletriFix" src="ELETRIFIX.png" alt="eletrifix" class="site">
+                    <label for="eletrifix"><strong>EletriFix</strong></label>
+                    <p class="projetoTxt">Landing page + gerador de orçamento para uma elétrica. <br>
+                        Ferramentas: <br>
+                        Front-end: HTML, CSS, JS; <br>
+                        Back-end: JS (nodeJS); <br>
+                        APIs: Fetch API (Js); <br>
+                        Database: SQLite.
+                    </p>
+                </div>
+                <div class="projetoCard">
+                    <img id="caixaEletônico" src="caixa.png" alt="caixaEletônico" class="site">
+                    <label for="caixaEletônico"><strong>Caixa Eletrônico</strong></label>
+                    <p class="projetoTxt">Simula um caixa eletrônico básico. <br>
+                        Ferramentas: <br>
+                        Front-end: HTML, CSS, JS; <br>
+                        Back-end: JS; <br>
+                        APIs: Fetch API (Js); <br>
+                        DataBase: Não possui
+                    </p>
+                </div>
+                <a href="https://github.com/Varelaa26" class="vejaMais">Veja mais projetos clicando aqui.</a>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <form class="formulario">
+                <h3>Envie uma mensagem:</h3>
+                <div class="formulario">
+                    <input type="text" placeholder="Nome" id="nome">
+                    <input type="text" placeholder="Telefone" id="telefone">
+                    <textarea name="msg" id="msg" placeholder="Digite sua mensagem"></textarea>
+                    <input type="button" value="ENVIAR" id="contato" class="contatoBtn" onclick="enviar(event)">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://www.instagram.com/scribblee_dev/">@scribblee_dev</a>
+        <a href="tel:+55 (49) 998289806">+55 (49) 998289806</a>
+    </footer>
+</body>
+
+<script>
+
+    function enviar(event) {
+        event.preventDefault()
+
+        const nome = document.getElementById("nome").value
+        const telefone = document.getElementById("telefone").value
+        const msg = document.getElementById("msg").value
+
+        const txt = "Olá! Me chamo " + nome + ", meu telefone é: " + telefone + ", " + msg
+        const texto = encodeURIComponent(txt)
+
+        const url = `https://whatsa.me/554998289806/?t=${texto}`
+
+        window.open(url, "_blank")
+
+        console.log(url)
+
+    }
+</script>
+
+</html>
