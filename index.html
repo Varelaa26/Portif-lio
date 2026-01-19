@@ -26,7 +26,12 @@
 
             <div class="nome">
                 <h1>Victor Gabriel</h1>
-                <h3>--\\==Scribble==//--</h3>
+                <h3>--\\==DESENVOLVEDOR FULLSTACK==//--</h3>
+            </div>
+
+            <div class="contact">
+                <img src="insta.png" alt="icon" class="icon" onclick="insta()">
+                <img src="github.png" alt="github" class="github" onclick="github()">
             </div>
         </section>
     </header>
@@ -40,7 +45,7 @@
 
                 <div class="sobreTxt">
                     <p>Desenvolvedor Fullstack Jr. com preferência por Back-end. <br>
-                        Ingressei na programação em agosto de 2025 com python,<br>
+                        Ingressei na programação em agosto de 2025 com python.<br>
                         No desenvolvimento web, comecei em setembro do mesmo ano.</p>
                 </div>
 
@@ -49,7 +54,6 @@
                     <h4>Back-end</h4>
                     <ul>
                         <li class="skill"><img src="python.webp" alt="pythonLogo" class="logo">Python 3</li>
-                        <li class="skill"><img src="JavaScript-logo.png" alt="jsLogo" class="logo">JavaScript ES6</li>
                         <li class="skill"><img src="node.png" alt="nodeLogo" class="logo">NodeJS</li>
                     </ul>
 
@@ -57,11 +61,18 @@
                     <ul>
                         <li class="skill"><img src="html.png" alt="htmlLogo" class="logo">HTML 5</li>
                         <li class="skill"><img src="css.png" alt="cssLogo" class="logo">CSS 3</li>
+                         <li class="skill"><img src="JavaScript-logo.png" alt="jsLogo" class="logo">JavaScript ES6</li>
                     </ul>
 
                     <h4>DataBases</h4>
                     <ul>
                         <li class="skill"><img src="sqlite-logo.png" alt="sqliteLogo" class="logo">SQLite</li>
+                    </ul>
+
+                    <h4>Ferramentas</h4>
+                    <ul>
+                        <li class="skill"><img src="git.png" alt="gitLogo" class="logo">Git</li>
+                        <li class="skill"><img src="github.png" alt="githubLogo" class="logo">GitHub</li>
                     </ul>
                 </div>
             </div>
@@ -111,10 +122,10 @@
             <form class="formulario">
                 <h3>Envie uma mensagem:</h3>
                 <div class="formulario">
-                    <input type="text" placeholder="Nome" id="nome">
-                    <input type="text" placeholder="Telefone" id="telefone">
-                    <textarea name="msg" id="msg" placeholder="Digite sua mensagem"></textarea>
-                    <input type="button" value="ENVIAR" id="contato" class="contatoBtn" onclick="enviar(event)">
+                    <input type="text" placeholder="Nome" id="nome" required>
+                    <input type="text" placeholder="Telefone" id="telefone" required>
+                    <textarea name="msg" id="msg" placeholder="Digite sua mensagem"></textarea required>
+                    <input type="submit" value="ENVIAR" id="contato" class="contatoBtn" onsubmit="enviar(event)">
                 </div>
             </form>
         </section>
@@ -135,7 +146,7 @@
         const telefone = document.getElementById("telefone").value
         const msg = document.getElementById("msg").value
 
-        const txt = "Olá! Me chamo " + nome + ", meu telefone é: " + telefone + ", " + msg
+        const txt = "Olá! Me chamo " + nome + ". " + msg
         const texto = encodeURIComponent(txt)
 
         const url = `https://whatsa.me/554998289806/?t=${texto}`
@@ -145,6 +156,13 @@
         console.log(url)
 
     }
+    function insta() {
+        window.open("https://www.instagram.com/scribblee_dev/", "_blank")
+    }
+    function github() {
+        window.open("https://github.com/Varelaa26", "_blank")
+    }
+
 </script>
 
 </html>
