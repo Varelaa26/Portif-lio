@@ -71,7 +71,13 @@ ul, li{
     flex-direction: column;
     margin-top: 3rem;
     text-align: center;
+    cursor: default;
+    transition: 0.4s;
 }
+.nome:hover{
+    transform: scale(1.05);
+}
+
 .contact{
     display: flex;
     flex-direction: row;
@@ -128,7 +134,11 @@ ul, li{
     background-color: black;
     padding: 3rem;
     border-radius: 15px;
-    box-shadow: 0 0 25px var(--secundaria);
+    box-shadow: 0 0 10px var(--secundaria);
+    transition: 0.4s;
+}
+.sobreBox:hover {
+    box-shadow: 0 0 40px var(--secundaria);
 }
 .sobreTitulo h2 {
     font-size: 2.5rem;
@@ -211,6 +221,10 @@ ul, li{
     color: var(--secundaria);
     display: flex;
     justify-content: center;
+    transition: 0.4s;
+}
+.vejaMais:hover {
+    font-size: large;
 }
 .formulario{
     padding: 6rem 2rem;
@@ -310,3 +324,37 @@ footer a:hover { color: #fff; }
     transition: 0.3s;
 }
 .link:hover { font-size: large; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--secundaria);
+    transition: 0.4s;
+}
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    font-size: 33px;
+    letter-spacing: 1px;
+}
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ccc;
+    transition: 0.4s;
+}
+p:hover{
+    opacity: 70%;
+    color: var(--secundaria);
+}
+.inicio, .sobre, .projetos, .formulario, footer{
+    animation: aparecer ease-in-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 50%;
+}
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: 500px 0;
+    }
+    to{
+        opacity: 1;
+        transform: 0 0;
+    }
+}
