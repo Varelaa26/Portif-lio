@@ -66,13 +66,14 @@
 
                     <h4>DataBases</h4>
                     <ul>
-                        <li class="skill"><img src="sqlite-logo.png" alt="sqliteLogo" class="logo">SQLite</li>
+                        <li class="skill"><img src="sqlite-logo.png" alt="sqliteLogo" class="logo">SQLite 3</li>
                     </ul>
 
                     <h4>Ferramentas</h4>
                     <ul>
                         <li class="skill"><img src="git.png" alt="gitLogo" class="logo">Git</li>
                         <li class="skill"><img src="github.png" alt="githubLogo" class="logo">GitHub</li>
+                        <li class="skill"><img src="tailwindcss-icon.svg" alt="tailwind css" class="logo">Tailwind CSS</li>
                     </ul>
                 </div>
             </div>
@@ -85,34 +86,40 @@
                     <img id="pizzaDelivery" src="PizzaDelivery.png" alt="pizzaDelivery" class="site">
                     <label for="pizzaDelivery"><strong>Pizza-Delivery</strong></label>
                     <p class="projetoTxt">Sistema de delivery de pizzas simples. <br>
+                        Fullstack <br>
                         Ferramentas: <br>
                         Front-end: HTML, CSS, JS; <br>
                         Back-end: JS, Python; <br>
                         APIs: Fetch API (Flask); <br>
                         DataBase: Não possui.
+                        <a href="https://pizza-delivery-test.vercel.app/" class="link">Clique aqui para acessar</a>
                     </p>
                 </div>
                 <div class="projetoCard">
                     <img id="EletriFix" src="ELETRIFIX.png" alt="eletrifix" class="site">
                     <label for="eletrifix"><strong>EletriFix</strong></label>
                     <p class="projetoTxt">Landing page + gerador de orçamento para uma elétrica. <br>
+                        Fullstack <br>
                         Ferramentas: <br>
                         Front-end: HTML, CSS, JS; <br>
                         Back-end: JS (nodeJS); <br>
                         APIs: Fetch API (Js); <br>
                         Database: SQLite.
+                        <a href="https://eletrifix.onrender.com/" class="link">Clique aqui para acessar</a>
                     </p>
                 </div>
                 <div class="projetoCard">
                     <img id="caixaEletônico" src="caixa.png" alt="caixaEletônico" class="site">
                     <label for="caixaEletônico"><strong>Caixa Eletrônico</strong></label>
                     <p class="projetoTxt">Simula um caixa eletrônico básico. <br>
+                        Front-end <br>
                         Ferramentas: <br>
                         Front-end: HTML, CSS, JS; <br>
                         Back-end: JS; <br>
                         APIs: Fetch API (Js); <br>
                         DataBase: Não possui
                     </p>
+                    <a href="https://simulador-de-caixa-eletronico.vercel.app/" class="link">Clique aqui para acessar</a>
                 </div>
                 <a href="https://github.com/Varelaa26" class="vejaMais">Veja mais projetos clicando aqui.</a>
             </div>
@@ -125,7 +132,7 @@
                     <input type="text" placeholder="Nome" id="nome" required>
                     <input type="text" placeholder="Telefone" id="telefone" required>
                     <textarea name="msg" id="msg" placeholder="Digite sua mensagem"></textarea required>
-                    <input type="submit" value="ENVIAR" id="contato" class="contatoBtn" onsubmit="enviar(event)">
+                    <button id="contato" class="contatoBtn" onclick="enviar()">Enviar</button>
                 </div>
             </form>
         </section>
@@ -139,8 +146,7 @@
 
 <script>
 
-    function enviar(event) {
-        event.preventDefault()
+    function enviar() {
 
         const nome = document.getElementById("nome").value
         const telefone = document.getElementById("telefone").value
